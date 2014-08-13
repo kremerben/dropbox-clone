@@ -1,0 +1,27 @@
+{% extends 'base_template.html' %}
+
+
+{% block title %}Profile - {{ user.first_name|title }}{% endblock %}
+{% block content %}
+    <div class="container">
+
+<div class="row">
+    <div class="col-md-6">
+    <a href="/#/">Home</a> |
+    <h1>{{ user.first_name|title }} {{ user.last_name|title }}</h1>
+ <!--<p>Hi {{ user.first_name|title }} {{ user.last_name|title }}</p>-->
+    <p><a href="mailto:{{ user.email }}">{{ user.email }}</a></p>
+    <p>Joined: {{ user.date_joined }} ago</p>
+
+
+
+    </div>
+<div class="clearfix"></div>
+
+
+
+    <p>        <a href="{% url 'profile_update' user.id %}">update profile</a>
+</p>
+
+</div></div>
+{% endblock content %}
